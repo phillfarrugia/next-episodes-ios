@@ -196,6 +196,7 @@
 		F70AD4051A6D05BA00F5BA40 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = NE;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Phill Farrugia";
 				TargetAttributes = {
