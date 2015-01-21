@@ -15,6 +15,7 @@
 		F70AD41E1A6D05BA00F5BA40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70AD41D1A6D05BA00F5BA40 /* Images.xcassets */; };
 		F70AD4211A6D05BA00F5BA40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70AD41F1A6D05BA00F5BA40 /* LaunchScreen.xib */; };
 		F70AD42D1A6D05BA00F5BA40 /* Next_EpisodesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD42C1A6D05BA00F5BA40 /* Next_EpisodesTests.m */; };
+		F71390481A6F91FD00A12BCF /* NEShow.m in Sources */ = {isa = PBXBuildFile; fileRef = F71390471A6F91FD00A12BCF /* NEShow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		F70AD4261A6D05BA00F5BA40 /* Next EpisodesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Next EpisodesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70AD42B1A6D05BA00F5BA40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F70AD42C1A6D05BA00F5BA40 /* Next_EpisodesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Next_EpisodesTests.m; sourceTree = "<group>"; };
+		F71390461A6F91FD00A12BCF /* NEShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEShow.h; sourceTree = "<group>"; };
+		F71390471A6F91FD00A12BCF /* NEShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEShow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,8 @@
 		F74EF81F1A6D18AB006EC29E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F71390461A6F91FD00A12BCF /* NEShow.h */,
+				F71390471A6F91FD00A12BCF /* NEShow.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				F70AD4191A6D05BA00F5BA40 /* ViewController.m in Sources */,
 				F70AD4161A6D05BA00F5BA40 /* AppDelegate.m in Sources */,
 				F70AD4131A6D05BA00F5BA40 /* main.m in Sources */,
+				F71390481A6F91FD00A12BCF /* NEShow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
