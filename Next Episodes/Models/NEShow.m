@@ -63,16 +63,25 @@ typedef enum : NSUInteger {
 
 + (NSValueTransformer *)airDateJSONTransformer
 {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
-    NSLocale *posix = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-    [formatter setLocale:posix];
-    
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *string) {
-        return [formatter dateFromString:string];
+        return [self.dateFormatter dateFromString:string];
     } reverseBlock:^(NSDate *date) {
-        return [formatter stringFromDate:date];
+        return [self.dateFormatter stringFromDate:date];
     }];
+}
+
++ (NSDateFormatter *)dateFormatter
+{
+    static NSDateFormatter * _formatter;
+    
+    if (!_formatter) {
+        _formatter = [NSDateFormatter new];
+        _formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSZ";
+        NSLocale *posix = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+        [_formatter setLocale:posix];
+    }
+    
+    return _formatter;
 }
 
 @end
