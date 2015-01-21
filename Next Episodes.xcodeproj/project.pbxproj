@@ -16,6 +16,7 @@
 		F70AD4211A6D05BA00F5BA40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70AD41F1A6D05BA00F5BA40 /* LaunchScreen.xib */; };
 		F70AD42D1A6D05BA00F5BA40 /* Next_EpisodesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD42C1A6D05BA00F5BA40 /* Next_EpisodesTests.m */; };
 		F71390481A6F91FD00A12BCF /* NEShow.m in Sources */ = {isa = PBXBuildFile; fileRef = F71390471A6F91FD00A12BCF /* NEShow.m */; };
+		F713904B1A6FBA5C00A12BCF /* NEApiCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = F713904A1A6FBA5C00A12BCF /* NEApiCommunicator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		F70AD42C1A6D05BA00F5BA40 /* Next_EpisodesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Next_EpisodesTests.m; sourceTree = "<group>"; };
 		F71390461A6F91FD00A12BCF /* NEShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEShow.h; sourceTree = "<group>"; };
 		F71390471A6F91FD00A12BCF /* NEShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEShow.m; sourceTree = "<group>"; };
+		F71390491A6FBA5C00A12BCF /* NEApiCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEApiCommunicator.h; sourceTree = "<group>"; };
+		F713904A1A6FBA5C00A12BCF /* NEApiCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEApiCommunicator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +179,8 @@
 		F74EF8211A6D1990006EC29E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F71390491A6FBA5C00A12BCF /* NEApiCommunicator.h */,
+				F713904A1A6FBA5C00A12BCF /* NEApiCommunicator.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				F70AD4161A6D05BA00F5BA40 /* AppDelegate.m in Sources */,
 				F70AD4131A6D05BA00F5BA40 /* main.m in Sources */,
 				F71390481A6F91FD00A12BCF /* NEShow.m in Sources */,
+				F713904B1A6FBA5C00A12BCF /* NEApiCommunicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

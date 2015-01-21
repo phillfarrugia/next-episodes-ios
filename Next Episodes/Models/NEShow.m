@@ -11,30 +11,6 @@
 #import "MTLValueTransformer.h"
 #import "NSValueTransformer+MTLPredefinedTransformerAdditions.h"
 
-typedef enum : NSUInteger {
-    NEShowStatusReturning,
-    NEShowStatusInProduction,
-    NEShowStatusEnded
-} NEShowStatus;
-
-@interface NEShow ()
-
-@property (nonatomic, readonly) NSNumber *traktId;
-@property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) NSString *overview;
-@property (nonatomic, readonly) NSNumber *year;
-
-@property (nonatomic, readonly) NSURL *poster;
-
-@property (nonatomic, readonly) NSDate *airDate;
-@property (nonatomic, readonly) NSNumber *runtime;
-@property (nonatomic, readonly) NSString *certification;
-@property (nonatomic, readonly) NSString *network;
-
-@property (nonatomic, assign, readonly) NEShowStatus *status;
-
-@end
-
 @implementation NEShow
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
@@ -63,8 +39,12 @@ typedef enum : NSUInteger {
 
 + (NSValueTransformer *)airDateJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *string) {
-        return [self.dateFormatter dateFromString:string];
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^id(NSString *string) {
+        if (string) {
+            return [self.dateFormatter dateFromString:string];
+        } else {
+            return nil;
+        }
     } reverseBlock:^(NSDate *date) {
         return [self.dateFormatter stringFromDate:date];
     }];
