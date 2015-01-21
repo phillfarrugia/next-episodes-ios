@@ -18,6 +18,7 @@
 		F71390481A6F91FD00A12BCF /* NEShow.m in Sources */ = {isa = PBXBuildFile; fileRef = F71390471A6F91FD00A12BCF /* NEShow.m */; };
 		F713904B1A6FBA5C00A12BCF /* NEApiCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = F713904A1A6FBA5C00A12BCF /* NEApiCommunicator.m */; };
 		F713904E1A6FCC4F00A12BCF /* NEApiEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = F713904D1A6FCC4F00A12BCF /* NEApiEndpoints.m */; };
+		F71390511A6FD70D00A12BCF /* NEDataModelTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = F71390501A6FD70D00A12BCF /* NEDataModelTypes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		F713904A1A6FBA5C00A12BCF /* NEApiCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEApiCommunicator.m; sourceTree = "<group>"; };
 		F713904C1A6FCC4F00A12BCF /* NEApiEndpoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEApiEndpoints.h; sourceTree = "<group>"; };
 		F713904D1A6FCC4F00A12BCF /* NEApiEndpoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEApiEndpoints.m; sourceTree = "<group>"; };
+		F713904F1A6FD70D00A12BCF /* NEDataModelTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEDataModelTypes.h; sourceTree = "<group>"; };
+		F71390501A6FD70D00A12BCF /* NEDataModelTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEDataModelTypes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +122,7 @@
 				F74EF81E1A6D186F006EC29E /* Controllers */,
 				F74EF81F1A6D18AB006EC29E /* Models */,
 				F74EF8201A6D18C8006EC29E /* Views */,
-				F74EF8211A6D1990006EC29E /* Helpers */,
+				F74EF8211A6D1990006EC29E /* Networking */,
 				F70AD41A1A6D05BA00F5BA40 /* Main.storyboard */,
 				F70AD41F1A6D05BA00F5BA40 /* LaunchScreen.xib */,
 				F70AD41D1A6D05BA00F5BA40 /* Images.xcassets */,
@@ -179,14 +182,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F74EF8211A6D1990006EC29E /* Helpers */ = {
+		F74EF8211A6D1990006EC29E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				F71390491A6FBA5C00A12BCF /* NEApiCommunicator.h */,
 				F713904A1A6FBA5C00A12BCF /* NEApiCommunicator.m */,
 				F713904C1A6FCC4F00A12BCF /* NEApiEndpoints.h */,
 				F713904D1A6FCC4F00A12BCF /* NEApiEndpoints.m */,
+				F713904F1A6FD70D00A12BCF /* NEDataModelTypes.h */,
+				F71390501A6FD70D00A12BCF /* NEDataModelTypes.m */,
 			);
+			name = Networking;
 			path = Helpers;
 			sourceTree = "<group>";
 		};
@@ -344,6 +350,7 @@
 			files = (
 				F70AD4191A6D05BA00F5BA40 /* ViewController.m in Sources */,
 				F70AD4161A6D05BA00F5BA40 /* AppDelegate.m in Sources */,
+				F71390511A6FD70D00A12BCF /* NEDataModelTypes.m in Sources */,
 				F70AD4131A6D05BA00F5BA40 /* main.m in Sources */,
 				F71390481A6F91FD00A12BCF /* NEShow.m in Sources */,
 				F713904E1A6FCC4F00A12BCF /* NEApiEndpoints.m in Sources */,
