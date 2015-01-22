@@ -17,16 +17,16 @@
 }
 
 - (NSOperation *)dataFromURLRequest:(NSURLRequest *)urlRequest
-                            success:(void (^)(NSURLRequest *, NSDictionary *))success
-                            failure:(void (^)(NSURLRequest *, NSError *))failure
+                            success:(void (^)(NEApiCommunicator *dataSource, NSURLRequest *urlRequest, NSDictionary *response))success
+                            failure:(void (^)(NEApiCommunicator *dataSource, NSURLRequest *urlRequest, NSError *error))failure
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     NSOperation *operation = [manager HTTPRequestOperationWithRequest:urlRequest
                                                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                                  success(urlRequest, (NSDictionary *)responseObject);
+                                                                  success(self, urlRequest, (NSDictionary *)responseObject);
                                                               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                                  failure(urlRequest, error);
+                                                                  failure(self, urlRequest, error);
                                                               }];
     [manager.operationQueue addOperation:operation];
     
@@ -34,5 +34,3 @@
 }
 
 @end
-
-#pragma mark - DataManagerDataSource

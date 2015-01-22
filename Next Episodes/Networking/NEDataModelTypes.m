@@ -2,18 +2,18 @@
 //  NEDataModelTypes.m
 //  Next Episodes
 //
-//  Created by Phill Farrugia on 21/01/2015.
+//  Created by Phill Farrugia on 22/01/2015.
 //  Copyright (c) 2015 Phill Farrugia. All rights reserved.
 //
 
 #import "NEDataModelTypes.h"
-#import "NEShow.h"
+#import "NEShowModel.h"
 
 Class dataModelOfType(NEDataModelType dataModelType)
 {
     switch (dataModelType) {
         case NEDataModelTypeShow:
-            return [NEShow class];
+            return [NEShowModel class];
         case NEDataModelTypeEpisode:
             return nil; //nothing yet
     }

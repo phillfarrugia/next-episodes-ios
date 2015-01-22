@@ -23,10 +23,12 @@ static NSString * const NEApiShowSearchEndpoint = @"https://next-episodes-api.he
 
 + (instancetype)endpoints
 {
-    static NEApiEndpoints *apiEndpoints = nil;
+    static NEApiEndpoints * apiEndpoints = nil;
+    
     if (!apiEndpoints) {
         apiEndpoints = [[NEApiEndpoints alloc] init];
     }
+    
     return apiEndpoints;
 }
 

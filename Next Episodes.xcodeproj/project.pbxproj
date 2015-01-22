@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9219462E8EC504B099712E0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE16B1E6501BA062FA21DD7 /* libPods.a */; };
+		F70219C31A71054000AC26F1 /* NEDataModelTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = F70219C21A71054000AC26F1 /* NEDataModelTypes.m */; };
 		F70AD4131A6D05BA00F5BA40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4121A6D05BA00F5BA40 /* main.m */; };
 		F70AD4161A6D05BA00F5BA40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4151A6D05BA00F5BA40 /* AppDelegate.m */; };
 		F70AD4191A6D05BA00F5BA40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4181A6D05BA00F5BA40 /* ViewController.m */; };
@@ -15,10 +16,10 @@
 		F70AD41E1A6D05BA00F5BA40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70AD41D1A6D05BA00F5BA40 /* Images.xcassets */; };
 		F70AD4211A6D05BA00F5BA40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70AD41F1A6D05BA00F5BA40 /* LaunchScreen.xib */; };
 		F70AD42D1A6D05BA00F5BA40 /* Next_EpisodesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD42C1A6D05BA00F5BA40 /* Next_EpisodesTests.m */; };
-		F71390481A6F91FD00A12BCF /* NEShow.m in Sources */ = {isa = PBXBuildFile; fileRef = F71390471A6F91FD00A12BCF /* NEShow.m */; };
+		F71390481A6F91FD00A12BCF /* NEShowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F71390471A6F91FD00A12BCF /* NEShowModel.m */; };
 		F713904B1A6FBA5C00A12BCF /* NEApiCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = F713904A1A6FBA5C00A12BCF /* NEApiCommunicator.m */; };
 		F713904E1A6FCC4F00A12BCF /* NEApiEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = F713904D1A6FCC4F00A12BCF /* NEApiEndpoints.m */; };
-		F71390511A6FD70D00A12BCF /* NEDataModelTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = F71390501A6FD70D00A12BCF /* NEDataModelTypes.m */; };
+		F71390541A6FD9B800A12BCF /* NEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F71390531A6FD9B800A12BCF /* NEDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 		2DE16B1E6501BA062FA21DD7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA94898A22910F43E51D7D1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CF2C15ECE26DDDA5A280C875 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F70219C11A71054000AC26F1 /* NEDataModelTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEDataModelTypes.h; sourceTree = "<group>"; };
+		F70219C21A71054000AC26F1 /* NEDataModelTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEDataModelTypes.m; sourceTree = "<group>"; };
 		F70AD40D1A6D05BA00F5BA40 /* Next Episodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Next Episodes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70AD4111A6D05BA00F5BA40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F70AD4121A6D05BA00F5BA40 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -48,14 +51,14 @@
 		F70AD4261A6D05BA00F5BA40 /* Next EpisodesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Next EpisodesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70AD42B1A6D05BA00F5BA40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F70AD42C1A6D05BA00F5BA40 /* Next_EpisodesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Next_EpisodesTests.m; sourceTree = "<group>"; };
-		F71390461A6F91FD00A12BCF /* NEShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEShow.h; sourceTree = "<group>"; };
-		F71390471A6F91FD00A12BCF /* NEShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEShow.m; sourceTree = "<group>"; };
+		F71390461A6F91FD00A12BCF /* NEShowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEShowModel.h; sourceTree = "<group>"; };
+		F71390471A6F91FD00A12BCF /* NEShowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEShowModel.m; sourceTree = "<group>"; };
 		F71390491A6FBA5C00A12BCF /* NEApiCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEApiCommunicator.h; sourceTree = "<group>"; };
 		F713904A1A6FBA5C00A12BCF /* NEApiCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEApiCommunicator.m; sourceTree = "<group>"; };
 		F713904C1A6FCC4F00A12BCF /* NEApiEndpoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEApiEndpoints.h; sourceTree = "<group>"; };
 		F713904D1A6FCC4F00A12BCF /* NEApiEndpoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEApiEndpoints.m; sourceTree = "<group>"; };
-		F713904F1A6FD70D00A12BCF /* NEDataModelTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEDataModelTypes.h; sourceTree = "<group>"; };
-		F71390501A6FD70D00A12BCF /* NEDataModelTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEDataModelTypes.m; sourceTree = "<group>"; };
+		F71390521A6FD9B800A12BCF /* NEDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEDataManager.h; sourceTree = "<group>"; };
+		F71390531A6FD9B800A12BCF /* NEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,8 +172,8 @@
 		F74EF81F1A6D18AB006EC29E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F71390461A6F91FD00A12BCF /* NEShow.h */,
-				F71390471A6F91FD00A12BCF /* NEShow.m */,
+				F71390461A6F91FD00A12BCF /* NEShowModel.h */,
+				F71390471A6F91FD00A12BCF /* NEShowModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,11 +192,12 @@
 				F713904A1A6FBA5C00A12BCF /* NEApiCommunicator.m */,
 				F713904C1A6FCC4F00A12BCF /* NEApiEndpoints.h */,
 				F713904D1A6FCC4F00A12BCF /* NEApiEndpoints.m */,
-				F713904F1A6FD70D00A12BCF /* NEDataModelTypes.h */,
-				F71390501A6FD70D00A12BCF /* NEDataModelTypes.m */,
+				F71390521A6FD9B800A12BCF /* NEDataManager.h */,
+				F71390531A6FD9B800A12BCF /* NEDataManager.m */,
+				F70219C11A71054000AC26F1 /* NEDataModelTypes.h */,
+				F70219C21A71054000AC26F1 /* NEDataModelTypes.m */,
 			);
-			name = Networking;
-			path = Helpers;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,11 +352,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70219C31A71054000AC26F1 /* NEDataModelTypes.m in Sources */,
 				F70AD4191A6D05BA00F5BA40 /* ViewController.m in Sources */,
 				F70AD4161A6D05BA00F5BA40 /* AppDelegate.m in Sources */,
-				F71390511A6FD70D00A12BCF /* NEDataModelTypes.m in Sources */,
+				F71390541A6FD9B800A12BCF /* NEDataManager.m in Sources */,
 				F70AD4131A6D05BA00F5BA40 /* main.m in Sources */,
-				F71390481A6F91FD00A12BCF /* NEShow.m in Sources */,
+				F71390481A6F91FD00A12BCF /* NEShowModel.m in Sources */,
 				F713904E1A6FCC4F00A12BCF /* NEApiEndpoints.m in Sources */,
 				F713904B1A6FBA5C00A12BCF /* NEApiCommunicator.m in Sources */,
 			);
@@ -408,7 +413,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
-				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = shallow;
+				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -455,7 +460,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
-				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = shallow;
+				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;

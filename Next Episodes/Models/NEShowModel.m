@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 Phill Farrugia. All rights reserved.
 //
 
-#import "NEShow.h"
+#import "NEShowModel.h"
 #import "MTLJSONAdapter.h"
 #import "MTLValueTransformer.h"
 #import "NSValueTransformer+MTLPredefinedTransformerAdditions.h"
 
-@implementation NEShow
+@implementation NEShowModel
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {

@@ -14,7 +14,7 @@ typedef enum : NSUInteger {
     NEShowStatusEnded
 } NEShowStatus;
 
-@interface NEShow : MTLModel
+@interface NEShowModel : MTLModel
 
 @property (readonly) NSNumber *traktId;
 

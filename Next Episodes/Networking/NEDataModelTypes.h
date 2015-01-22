@@ -2,7 +2,7 @@
 //  NEDataModelTypes.h
 //  Next Episodes
 //
-//  Created by Phill Farrugia on 21/01/2015.
+//  Created by Phill Farrugia on 22/01/2015.
 //  Copyright (c) 2015 Phill Farrugia. All rights reserved.
 //
 
@@ -16,3 +16,4 @@ typedef NS_ENUM(NSUInteger, NEDataModelType)
 };
 
 Class dataModelOfType(NEDataModelType dataModelType);
+

@@ -13,7 +13,7 @@
 + (instancetype)apiCommunicator;
 
 - (NSOperation *)dataFromURLRequest:(NSURLRequest *)urlRequest
-                            success:(void (^)(NSURLRequest *urlRequest, NSDictionary *response))success
-                            failure:(void (^)(NSURLRequest *urlRequest, NSError *error))failure;
+                            success:(void (^)(NEApiCommunicator *dataSource, NSURLRequest *urlRequest, NSDictionary *response))success
+                            failure:(void (^)(NEApiCommunicator *dataSource, NSURLRequest *urlRequest, NSError *error))failure;
 
 @end
