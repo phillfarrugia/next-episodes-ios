@@ -7,6 +7,7 @@
 //
 
 #import "MTLModel.h"
+#import "NEJsonDataModelDecoder.h"
 
 typedef enum : NSUInteger {
     NEShowStatusReturning,
@@ -31,5 +32,9 @@ typedef enum : NSUInteger {
 @property (readonly) NSString *network;
 
 @property (nonatomic, assign, readonly) NEShowStatus *status;
+
+@end
+
+@interface NEShowModelDecoder : NSObject <NEJsonDataModelDecoder>
 
 @end

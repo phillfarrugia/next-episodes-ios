@@ -18,3 +18,13 @@ Class dataModelOfType(NEDataModelType dataModelType)
             return nil; //nothing yet
     }
 }
+
+Class <NEJsonDataModelDecoder> dataModelDecoderOfType(NEDataModelType dataModelType)
+{
+    switch (dataModelType) {
+        case NEDataModelTypeShow:
+            return [NEShowModelDecoder class];
+        case NEDataModelTypeEpisode:
+            return nil; //soon
+    }
+}

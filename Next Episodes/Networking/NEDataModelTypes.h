@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Phill Farrugia. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "NEJsonDataModelDecoder.h"
 
 typedef NS_ENUM(NSUInteger, NEDataModelType)
 {
@@ -16,4 +16,5 @@ typedef NS_ENUM(NSUInteger, NEDataModelType)
 };
 
 Class dataModelOfType(NEDataModelType dataModelType);
+Class <NEJsonDataModelDecoder> dataModelDecoderOfType(NEDataModelType dataModelType);
 

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9219462E8EC504B099712E0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE16B1E6501BA062FA21DD7 /* libPods.a */; };
-		F70219C31A71054000AC26F1 /* NEDataModelTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = F70219C21A71054000AC26F1 /* NEDataModelTypes.m */; };
+		F70219C31A71054000AC26F1 /* NDataModelTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = F70219C21A71054000AC26F1 /* NDataModelTypes.m */; };
 		F70AD4131A6D05BA00F5BA40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4121A6D05BA00F5BA40 /* main.m */; };
 		F70AD4161A6D05BA00F5BA40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4151A6D05BA00F5BA40 /* AppDelegate.m */; };
 		F70AD4191A6D05BA00F5BA40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4181A6D05BA00F5BA40 /* ViewController.m */; };
@@ -37,7 +37,8 @@
 		3FA94898A22910F43E51D7D1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CF2C15ECE26DDDA5A280C875 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F70219C11A71054000AC26F1 /* NEDataModelTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEDataModelTypes.h; sourceTree = "<group>"; };
-		F70219C21A71054000AC26F1 /* NEDataModelTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEDataModelTypes.m; sourceTree = "<group>"; };
+		F70219C21A71054000AC26F1 /* NDataModelTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDataModelTypes.m; sourceTree = "<group>"; };
+		F70219C41A710C7300AC26F1 /* NEJsonDataModelDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEJsonDataModelDecoder.h; sourceTree = "<group>"; };
 		F70AD40D1A6D05BA00F5BA40 /* Next Episodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Next Episodes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70AD4111A6D05BA00F5BA40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F70AD4121A6D05BA00F5BA40 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -195,7 +196,8 @@
 				F71390521A6FD9B800A12BCF /* NEDataManager.h */,
 				F71390531A6FD9B800A12BCF /* NEDataManager.m */,
 				F70219C11A71054000AC26F1 /* NEDataModelTypes.h */,
-				F70219C21A71054000AC26F1 /* NEDataModelTypes.m */,
+				F70219C21A71054000AC26F1 /* NDataModelTypes.m */,
+				F70219C41A710C7300AC26F1 /* NEJsonDataModelDecoder.h */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -352,7 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F70219C31A71054000AC26F1 /* NEDataModelTypes.m in Sources */,
+				F70219C31A71054000AC26F1 /* NDataModelTypes.m in Sources */,
 				F70AD4191A6D05BA00F5BA40 /* ViewController.m in Sources */,
 				F70AD4161A6D05BA00F5BA40 /* AppDelegate.m in Sources */,
 				F71390541A6FD9B800A12BCF /* NEDataManager.m in Sources */,

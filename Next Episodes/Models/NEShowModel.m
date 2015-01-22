@@ -65,3 +65,30 @@
 }
 
 @end
+
+@implementation NEShowModelDecoder
+
+#pragma mark JsonDataModelDecoder
+
++ (NSArray *)decodeCollection:(NSDictionary *)collectionDict error:(NSError **)error
+{
+    NSArray *collection = (NSArray *)collectionDict[@"shows"];
+    
+    if (error && *error) {
+        return nil;
+    }
+    
+    return [MTLJSONAdapter modelsOfClass:[NEShowModel class] fromJSONArray:collection error:error];
+}
+
++ (NSDictionary *)encodeCollection:(NSArray *)collection
+{
+    return @{@"shows": [MTLJSONAdapter JSONArrayFromModels:collection]};
+}
+
++ (MTLModel *)decodeEntity:(NSDictionary *)entityDict error:(NSError **)error
+{
+    return [MTLJSONAdapter modelOfClass:[NEShowModel class] fromJSONDictionary:entityDict error:error];
+}
+
+@end
