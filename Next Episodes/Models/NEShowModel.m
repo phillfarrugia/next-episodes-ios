@@ -33,7 +33,7 @@
             @"returning series": @(NEShowStatusReturning),
             @"in production": @(NEShowStatusInProduction),
             @"ended": @(NEShowStatusEnded),
-            @"canceled": @(NEShowStatusEnded)
+            @"canceled": @(NEShowStatusCanceled)
             }];
 }
 

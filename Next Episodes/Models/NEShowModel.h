@@ -6,16 +6,17 @@
 //  Copyright (c) 2015 Phill Farrugia. All rights reserved.
 //
 
-#import "MTLModel.h"
+#import <Mantle/Mantle.h>
 #import "NEJsonDataModelDecoder.h"
 
 typedef enum : NSUInteger {
     NEShowStatusReturning,
     NEShowStatusInProduction,
-    NEShowStatusEnded
+    NEShowStatusEnded,
+    NEShowStatusCanceled
 } NEShowStatus;
 
-@interface NEShowModel : MTLModel
+@interface NEShowModel : MTLModel <MTLJSONSerializing>
 
 @property (readonly) NSNumber *traktId;
 
@@ -31,7 +32,7 @@ typedef enum : NSUInteger {
 @property (readonly) NSString *certification;
 @property (readonly) NSString *network;
 
-@property (nonatomic, assign, readonly) NEShowStatus *status;
+@property (nonatomic, assign, readonly) NEShowStatus status;
 
 @end
 

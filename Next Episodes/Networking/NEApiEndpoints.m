@@ -15,7 +15,7 @@ static NSString * const NEApiShowSearchEndpoint = @"https://next-episodes-api.he
 
 @interface NEApiEndpoints ()
 
-@property (nonatomic) AFJSONRequestSerializer *requestSerializer;
+@property (nonatomic) AFHTTPRequestSerializer *requestSerializer;
 
 @end
 
@@ -30,6 +30,17 @@ static NSString * const NEApiShowSearchEndpoint = @"https://next-episodes-api.he
     }
     
     return apiEndpoints;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self) {
+        self.requestSerializer = [AFHTTPRequestSerializer serializer];
+    }
+    
+    return self;
 }
 
 - (NSURLRequest *)trendingShowsRequest
