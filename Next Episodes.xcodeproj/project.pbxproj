@@ -23,6 +23,7 @@
 		F71390541A6FD9B800A12BCF /* NEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F71390531A6FD9B800A12BCF /* NEDataManager.m */; };
 		F75628921A73547F0022339D /* NEListDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F75628911A73547F0022339D /* NEListDataManager.m */; };
 		F7DB05C01A73616500CE9353 /* NEListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DB05BF1A73616500CE9353 /* NEListModel.m */; };
+		F7DB05C31A73BD0700CE9353 /* NEAddShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DB05C21A73BD0700CE9353 /* NEAddShowViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		F75628911A73547F0022339D /* NEListDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEListDataManager.m; sourceTree = "<group>"; };
 		F7DB05BE1A73616500CE9353 /* NEListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEListModel.h; sourceTree = "<group>"; };
 		F7DB05BF1A73616500CE9353 /* NEListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEListModel.m; sourceTree = "<group>"; };
+		F7DB05C11A73BD0700CE9353 /* NEAddShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEAddShowViewController.h; sourceTree = "<group>"; };
+		F7DB05C21A73BD0700CE9353 /* NEAddShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEAddShowViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +190,8 @@
 			children = (
 				F70AD4171A6D05BA00F5BA40 /* NEMainViewController.h */,
 				F70AD4181A6D05BA00F5BA40 /* NEMainViewController.m */,
+				F7DB05C11A73BD0700CE9353 /* NEAddShowViewController.h */,
+				F7DB05C21A73BD0700CE9353 /* NEAddShowViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				F75628921A73547F0022339D /* NEListDataManager.m in Sources */,
 				F70AD4161A6D05BA00F5BA40 /* NEAppDelegate.m in Sources */,
 				F7DB05C01A73616500CE9353 /* NEListModel.m in Sources */,
+				F7DB05C31A73BD0700CE9353 /* NEAddShowViewController.m in Sources */,
 				F70219C91A7338AB00AC26F1 /* NEEpisodeModel.m in Sources */,
 				F71390541A6FD9B800A12BCF /* NEDataManager.m in Sources */,
 				F70AD4131A6D05BA00F5BA40 /* main.m in Sources */,

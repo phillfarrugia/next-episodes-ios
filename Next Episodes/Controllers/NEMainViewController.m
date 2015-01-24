@@ -10,6 +10,7 @@
 #import "NYSegmentedControl.h"
 #import "NEListDataManager.h"
 #import "NEListModel.h"
+#import "NEAddShowViewController.h"
 
 @interface NEMainViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -120,7 +121,9 @@
 
 - (void)didSelectAddShow
 {
-    NSLog(@"Add show");
+    NEAddShowViewController *addShowViewController = [[NEAddShowViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addShowViewController];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 - (void)didSelectSettings
