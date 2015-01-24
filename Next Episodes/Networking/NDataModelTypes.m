@@ -8,6 +8,7 @@
 
 #import "NEDataModelTypes.h"
 #import "NEShowModel.h"
+#import "NEEpisodeModel.h"
 
 Class dataModelOfType(NEDataModelType dataModelType)
 {
@@ -15,7 +16,7 @@ Class dataModelOfType(NEDataModelType dataModelType)
         case NEDataModelTypeShow:
             return [NEShowModel class];
         case NEDataModelTypeEpisode:
-            return nil; //nothing yet
+            return [NEEpisodeModel class]; //nothing yet
     }
 }
 
@@ -25,6 +26,6 @@ Class <NEJsonDataModelDecoder> dataModelDecoderOfType(NEDataModelType dataModelT
         case NEDataModelTypeShow:
             return [NEShowModelDecoder class];
         case NEDataModelTypeEpisode:
-            return nil; //soon
+            return [NEEpisodeModelDecoder class]; //soon
     }
 }
