@@ -10,6 +10,7 @@
 		9219462E8EC504B099712E0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE16B1E6501BA062FA21DD7 /* libPods.a */; };
 		F70219C31A71054000AC26F1 /* NDataModelTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = F70219C21A71054000AC26F1 /* NDataModelTypes.m */; };
 		F70219C91A7338AB00AC26F1 /* NEEpisodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F70219C81A7338AB00AC26F1 /* NEEpisodeModel.m */; };
+		F70219CE1A73450B00AC26F1 /* UIColor+NextEpisodes.m in Sources */ = {isa = PBXBuildFile; fileRef = F70219CD1A73450B00AC26F1 /* UIColor+NextEpisodes.m */; };
 		F70AD4131A6D05BA00F5BA40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4121A6D05BA00F5BA40 /* main.m */; };
 		F70AD4161A6D05BA00F5BA40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4151A6D05BA00F5BA40 /* AppDelegate.m */; };
 		F70AD4191A6D05BA00F5BA40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4181A6D05BA00F5BA40 /* ViewController.m */; };
@@ -43,6 +44,8 @@
 		F70219C71A7338AB00AC26F1 /* NEEpisodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEEpisodeModel.h; sourceTree = "<group>"; };
 		F70219C81A7338AB00AC26F1 /* NEEpisodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEEpisodeModel.m; sourceTree = "<group>"; };
 		F70219CA1A73434800AC26F1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F70219CC1A73450B00AC26F1 /* UIColor+NextEpisodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+NextEpisodes.h"; path = "Categories/UIColor+NextEpisodes.h"; sourceTree = "<group>"; };
+		F70219CD1A73450B00AC26F1 /* UIColor+NextEpisodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+NextEpisodes.m"; path = "Categories/UIColor+NextEpisodes.m"; sourceTree = "<group>"; };
 		F70AD40D1A6D05BA00F5BA40 /* Next Episodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Next Episodes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70AD4111A6D05BA00F5BA40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F70AD4121A6D05BA00F5BA40 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,6 +105,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F70219CB1A73442800AC26F1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F70219CC1A73450B00AC26F1 /* UIColor+NextEpisodes.h */,
+				F70219CD1A73450B00AC26F1 /* UIColor+NextEpisodes.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		F70AD4041A6D05BA00F5BA40 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +143,7 @@
 				F74EF81F1A6D18AB006EC29E /* Models */,
 				F74EF8201A6D18C8006EC29E /* Views */,
 				F74EF8211A6D1990006EC29E /* Networking */,
+				F70219CB1A73442800AC26F1 /* Categories */,
 				F70AD41A1A6D05BA00F5BA40 /* Main.storyboard */,
 				F70AD41F1A6D05BA00F5BA40 /* LaunchScreen.xib */,
 				F70AD41D1A6D05BA00F5BA40 /* Images.xcassets */,
@@ -369,6 +382,7 @@
 				F70AD4131A6D05BA00F5BA40 /* main.m in Sources */,
 				F71390481A6F91FD00A12BCF /* NEShowModel.m in Sources */,
 				F713904E1A6FCC4F00A12BCF /* NEApiEndpoints.m in Sources */,
+				F70219CE1A73450B00AC26F1 /* UIColor+NextEpisodes.m in Sources */,
 				F713904B1A6FBA5C00A12BCF /* NEApiCommunicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
