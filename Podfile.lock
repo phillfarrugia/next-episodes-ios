@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.5.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - DateTools (1.4.3)
   - Mantle (1.5.4):
     - Mantle/extobjc (= 1.5.4)
   - Mantle/extobjc (1.5.4)
@@ -34,12 +35,14 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
+  - DateTools
   - Mantle (~> 1.5)
   - NYSegmentedControl
   - ReactiveCocoa (~> 2.4.4)
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
+  DateTools: 7c2d233ea2d4bda3a717d0cd5f58da926a5998d0
   Mantle: d5fbaf30fbc58031223af13812c060e15934a1fe
   NYSegmentedControl: 74094b886a80bfc4e9f6d415601e9b11797b22b7
   ReactiveCocoa: 31119068e3dde866bd257cf74e1f06b4023bf387
