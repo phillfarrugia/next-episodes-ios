@@ -17,7 +17,7 @@
 {
     return @{
              @"traktId": @"ids.trakt",
-             @"airDate": @"air_date",
+             @"airDate": @"airs",
              @"poster": @"images.poster.medium"
              };
 }
@@ -41,27 +41,17 @@
 {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^id(NSString *string) {
         if (string) {
-            return [self.dateFormatter dateFromString:string];
+            NSTimeInterval timeInterval = [string doubleValue];
+            
+            return [NSDate dateWithTimeIntervalSince1970:timeInterval];
         } else {
             return nil;
         }
     } reverseBlock:^(NSDate *date) {
-        return [self.dateFormatter stringFromDate:date];
+        NSTimeInterval timeInterval = [date timeIntervalSince1970];
+        
+        return [NSString stringWithFormat:@"%f", timeInterval];
     }];
-}
-
-+ (NSDateFormatter *)dateFormatter
-{
-    static NSDateFormatter * _formatter;
-    
-    if (!_formatter) {
-        _formatter = [NSDateFormatter new];
-        _formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSZ";
-        NSLocale *posix = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-        [_formatter setLocale:posix];
-    }
-    
-    return _formatter;
 }
 
 @end
