@@ -22,6 +22,7 @@
 		F713904B1A6FBA5C00A12BCF /* NEApiCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = F713904A1A6FBA5C00A12BCF /* NEApiCommunicator.m */; };
 		F713904E1A6FCC4F00A12BCF /* NEApiEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = F713904D1A6FCC4F00A12BCF /* NEApiEndpoints.m */; };
 		F71390541A6FD9B800A12BCF /* NEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F71390531A6FD9B800A12BCF /* NEDataManager.m */; };
+		F75628921A73547F0022339D /* NEShowsDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F75628911A73547F0022339D /* NEShowsDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		F713904D1A6FCC4F00A12BCF /* NEApiEndpoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEApiEndpoints.m; sourceTree = "<group>"; };
 		F71390521A6FD9B800A12BCF /* NEDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEDataManager.h; sourceTree = "<group>"; };
 		F71390531A6FD9B800A12BCF /* NEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEDataManager.m; sourceTree = "<group>"; };
+		F75628901A73547F0022339D /* NEShowsDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEShowsDataManager.h; sourceTree = "<group>"; };
+		F75628911A73547F0022339D /* NEShowsDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEShowsDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +198,8 @@
 				F71390471A6F91FD00A12BCF /* NEShowModel.m */,
 				F70219C71A7338AB00AC26F1 /* NEEpisodeModel.h */,
 				F70219C81A7338AB00AC26F1 /* NEEpisodeModel.m */,
+				F75628901A73547F0022339D /* NEShowsDataManager.h */,
+				F75628911A73547F0022339D /* NEShowsDataManager.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 			files = (
 				F70219C31A71054000AC26F1 /* NDataModelTypes.m in Sources */,
 				F70AD4191A6D05BA00F5BA40 /* ViewController.m in Sources */,
+				F75628921A73547F0022339D /* NEShowsDataManager.m in Sources */,
 				F70AD4161A6D05BA00F5BA40 /* AppDelegate.m in Sources */,
 				F70219C91A7338AB00AC26F1 /* NEEpisodeModel.m in Sources */,
 				F71390541A6FD9B800A12BCF /* NEDataManager.m in Sources */,
