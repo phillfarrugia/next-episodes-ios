@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Phill Farrugia. All rights reserved.
 //
 
-#import <ReactiveCocoa/ReactiveCocoa.h>
 #import "NEListDataManager.h"
 #import "NEListModel.h"
 #import "NEShowModel.h"
@@ -19,8 +18,6 @@ static NSString * const fullListName = @"ListCollection.json";
 @property (nonatomic)  NSURL *docPathURL;
 @property NEListModel *list;
 @property (nonatomic, strong) dispatch_queue_t archiveQueue;
-
-@property (nonatomic) RACSubject *listItemDidChangeSubject;
 
 @end
 
@@ -43,50 +40,41 @@ static NSString * const fullListName = @"ListCollection.json";
 {
     if ((self = [super init])) {
         self.archiveQueue = dispatch_queue_create("com.nextepisodes.archivequeue",  DISPATCH_QUEUE_SERIAL);
-        [self createRACSignals];
     }
     
     return self;
-}
-
-#pragma mark - Create Signals
-
-- (void)createRACSignals
-{
-    self.listItemDidChangeSubject = [RACSubject subject];
 }
 
 #pragma mark - Accessors
 
 - (NEListModel *)list
 {
-    @synchronized(self) {
-        if (self.list == nil) {
+        if (_list == nil) {
             NSString *filename = [[[self docPathURL] path] stringByAppendingPathComponent:fullListName];
             NSData *listData = [NSKeyedUnarchiver unarchiveObjectWithFile:filename];
             
             if (listData == nil) {
-                self.list = [[NEListModel alloc] initWithStandardValues];
+                _list = [[NEListModel alloc] initWithStandardValues];
             } else {
                 NEListModel *listModel = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedUnarchiver unarchiveObjectWithFile:filename]];
-                self.list = listModel;
+                _list = listModel;
             }
         }
         
         return _list;
-    }
 }
 
 - (BOOL)clearList
 {
-    self.list = [[NEListModel alloc] initWithStandardValues];
+    _list = [[NEListModel alloc] initWithStandardValues];
+    [self saveList];
     
     return YES;
 }
 
 - (BOOL)listContainsShowWithTraktId:(NSNumber *)traktId
 {
-    for (NEShowModel *show in [self.list shows]) {
+    for (NEShowModel *show in [_list shows]) {
         if ([show.traktId isEqualToNumber:traktId]) {
             return YES;
         }
@@ -97,45 +85,79 @@ static NSString * const fullListName = @"ListCollection.json";
 
 - (NEListModel *)addShow:(NEShowModel *)show
 {
-    self.list = [_list addShow:show];
+    _list = [_list addShow:show];
+    [self saveList];
     
-    return self.list;
+    return _list;
 }
 
 - (NEListModel *)removeShow:(NEShowModel *)show
 {
-    self.list = [_list removeShow:show];
+    _list = [_list removeShow:show];
+    [self saveList];
     
-    return self.list;
+    return _list;
 }
 
 - (NEListModel *)replaceShow:(NEShowModel *)oldShow withNewShow:(NEShowModel *)newShow
 {
-    self.list = [_list replaceShow:oldShow withShow:newShow];
+    _list = [_list replaceShow:oldShow withShow:newShow];
+    [self saveList];
     
-    return self.list;
+    return _list;
 }
 
 - (NEListModel *)addEpisode:(NEEpisodeModel *)episode
 {
-    self.list = [_list addEpisode:episode];
+    _list = [_list addEpisode:episode];
+    [self saveList];
     
-    return self.list;
+    return _list;
 }
 
 - (NEListModel *)removeEpisode:(NEEpisodeModel *)episode
 {
-    self.list = [_list removeEpisode:episode];
+    _list = [_list removeEpisode:episode];
+    [self saveList];
     
-    return self.list;
+    return _list;
 }
 
 - (NEListModel *)updateEpisode:(NEEpisodeModel *)episode withIsWatched:(BOOL)watched
 {
     NEEpisodeModel *newEpisode = [episode copyWithWatched:YES];
-    self.list = [_list replaceEpisode:episode withEpisode:newEpisode];
+    _list = [_list replaceEpisode:episode withEpisode:newEpisode];
+    [self saveList];
     
-    return self.list;
+    return _list;
+}
+
+- (void)saveList
+{
+    dispatch_async(self.archiveQueue, ^{
+        NSString *filename = [[[self docPathURL] path] stringByAppendingPathComponent:fullListName];
+        NSData *jsonData = [NSKeyedArchiver archivedDataWithRootObject:_list];
+        [NSKeyedArchiver archiveRootObject:jsonData toFile:filename];
+    });
+}
+
+- (NSURL *)docPathURL
+{
+    if (_docPathURL == nil) {
+        NSFileManager *fileManager = [[NSFileManager alloc] init];
+        NSURL *dir = [fileManager URLForDirectory:NSDocumentDirectory
+                                         inDomain:NSUserDomainMask
+                                appropriateForURL:nil
+                                           create:YES
+                                            error:nil];
+        _docPathURL = [[NSURL alloc] initFileURLWithPath:[dir path] isDirectory:YES];
+        
+        if (![fileManager fileExistsAtPath:[_docPathURL path]]) {
+            [[NSFileManager defaultManager] createDirectoryAtURL:_docPathURL withIntermediateDirectories:YES attributes:nil error:nil];
+        }
+    }
+    
+    return _docPathURL;
 }
 
 @end

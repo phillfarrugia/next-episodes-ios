@@ -6,10 +6,11 @@
 //  Copyright (c) 2015 Phill Farrugia. All rights reserved.
 //
 
+#import "MTLModel.h"
 @class NEShowModel;
 @class NEEpisodeModel;
 
-@interface NEListModel : NSObject
+@interface NEListModel : MTLModel
 
 @property (readonly, nonatomic) NSArray *shows;
 @property (readonly, nonatomic) NSArray *episodes;
