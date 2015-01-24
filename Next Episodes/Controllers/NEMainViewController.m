@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Phill Farrugia. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "NEMainViewController.h"
 
-@interface ViewController ()
+@interface NEMainViewController ()
 
 @end
 
-@implementation ViewController
+@implementation NEMainViewController
 
 - (void)viewDidLoad
 {

@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Phill Farrugia. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "NEAppDelegate.h"
 
-@interface AppDelegate ()
+@interface NEAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation NEAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

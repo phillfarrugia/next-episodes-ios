@@ -12,8 +12,8 @@
 		F70219C91A7338AB00AC26F1 /* NEEpisodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F70219C81A7338AB00AC26F1 /* NEEpisodeModel.m */; };
 		F70219CE1A73450B00AC26F1 /* UIColor+NextEpisodes.m in Sources */ = {isa = PBXBuildFile; fileRef = F70219CD1A73450B00AC26F1 /* UIColor+NextEpisodes.m */; };
 		F70AD4131A6D05BA00F5BA40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4121A6D05BA00F5BA40 /* main.m */; };
-		F70AD4161A6D05BA00F5BA40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4151A6D05BA00F5BA40 /* AppDelegate.m */; };
-		F70AD4191A6D05BA00F5BA40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4181A6D05BA00F5BA40 /* ViewController.m */; };
+		F70AD4161A6D05BA00F5BA40 /* NEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4151A6D05BA00F5BA40 /* NEAppDelegate.m */; };
+		F70AD4191A6D05BA00F5BA40 /* NEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AD4181A6D05BA00F5BA40 /* NEMainViewController.m */; };
 		F70AD41C1A6D05BA00F5BA40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70AD41A1A6D05BA00F5BA40 /* Main.storyboard */; };
 		F70AD41E1A6D05BA00F5BA40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70AD41D1A6D05BA00F5BA40 /* Images.xcassets */; };
 		F70AD4211A6D05BA00F5BA40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70AD41F1A6D05BA00F5BA40 /* LaunchScreen.xib */; };
@@ -51,10 +51,10 @@
 		F70AD40D1A6D05BA00F5BA40 /* Next Episodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Next Episodes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70AD4111A6D05BA00F5BA40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F70AD4121A6D05BA00F5BA40 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F70AD4141A6D05BA00F5BA40 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F70AD4151A6D05BA00F5BA40 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F70AD4171A6D05BA00F5BA40 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F70AD4181A6D05BA00F5BA40 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F70AD4141A6D05BA00F5BA40 /* NEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NEAppDelegate.h; sourceTree = "<group>"; };
+		F70AD4151A6D05BA00F5BA40 /* NEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NEAppDelegate.m; sourceTree = "<group>"; };
+		F70AD4171A6D05BA00F5BA40 /* NEMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NEMainViewController.h; sourceTree = "<group>"; };
+		F70AD4181A6D05BA00F5BA40 /* NEMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NEMainViewController.m; sourceTree = "<group>"; };
 		F70AD41B1A6D05BA00F5BA40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F70AD41D1A6D05BA00F5BA40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F70AD4201A6D05BA00F5BA40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -143,8 +143,8 @@
 		F70AD40F1A6D05BA00F5BA40 /* Next Episodes */ = {
 			isa = PBXGroup;
 			children = (
-				F70AD4141A6D05BA00F5BA40 /* AppDelegate.h */,
-				F70AD4151A6D05BA00F5BA40 /* AppDelegate.m */,
+				F70AD4141A6D05BA00F5BA40 /* NEAppDelegate.h */,
+				F70AD4151A6D05BA00F5BA40 /* NEAppDelegate.m */,
 				F74EF81E1A6D186F006EC29E /* Controllers */,
 				F74EF81F1A6D18AB006EC29E /* Models */,
 				F74EF8201A6D18C8006EC29E /* Views */,
@@ -188,8 +188,8 @@
 		F74EF81E1A6D186F006EC29E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F70AD4171A6D05BA00F5BA40 /* ViewController.h */,
-				F70AD4181A6D05BA00F5BA40 /* ViewController.m */,
+				F70AD4171A6D05BA00F5BA40 /* NEMainViewController.h */,
+				F70AD4181A6D05BA00F5BA40 /* NEMainViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -385,9 +385,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F70219C31A71054000AC26F1 /* NDataModelTypes.m in Sources */,
-				F70AD4191A6D05BA00F5BA40 /* ViewController.m in Sources */,
+				F70AD4191A6D05BA00F5BA40 /* NEMainViewController.m in Sources */,
 				F75628921A73547F0022339D /* NEListDataManager.m in Sources */,
-				F70AD4161A6D05BA00F5BA40 /* AppDelegate.m in Sources */,
+				F70AD4161A6D05BA00F5BA40 /* NEAppDelegate.m in Sources */,
 				F7DB05C01A73616500CE9353 /* NEListModel.m in Sources */,
 				F70219C91A7338AB00AC26F1 /* NEEpisodeModel.m in Sources */,
 				F71390541A6FD9B800A12BCF /* NEDataManager.m in Sources */,
