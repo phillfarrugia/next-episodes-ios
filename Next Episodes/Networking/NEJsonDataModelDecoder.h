@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 Phill Farrugia. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @class MTLModel;
 
 @protocol NEJsonDataModelDecoder
