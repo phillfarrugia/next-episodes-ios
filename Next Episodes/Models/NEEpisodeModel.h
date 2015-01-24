@@ -21,6 +21,10 @@
 
 @property (readonly) NSDate *airDate;
 
+@property (readonly, getter=isWatched) BOOL watched;
+
+- (instancetype)copyWithWatched:(BOOL)watched;
+
 @end
 
 @interface NEEpisodeModelDecoder : NSObject <NEJsonDataModelDecoder>

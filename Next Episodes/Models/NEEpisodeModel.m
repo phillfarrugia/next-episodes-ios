@@ -11,6 +11,12 @@
 #import "MTLValueTransformer.h"
 #import "NSValueTransformer+MTLPredefinedTransformerAdditions.h"
 
+@interface NEEpisodeModel ()
+
+@property (getter=isWatched) BOOL watched;
+
+@end
+
 @implementation NEEpisodeModel
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
@@ -37,6 +43,14 @@
         
         return [NSString stringWithFormat:@"%f", timeInterval];
     }];
+}
+
+- (instancetype)copyWithWatched:(BOOL)watched
+{
+    NEEpisodeModel *copy = [self copy];
+    copy.watched = watched;
+    
+    return copy;
 }
 
 @end

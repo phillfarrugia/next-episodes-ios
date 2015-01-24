@@ -22,7 +22,8 @@
 		F713904B1A6FBA5C00A12BCF /* NEApiCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = F713904A1A6FBA5C00A12BCF /* NEApiCommunicator.m */; };
 		F713904E1A6FCC4F00A12BCF /* NEApiEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = F713904D1A6FCC4F00A12BCF /* NEApiEndpoints.m */; };
 		F71390541A6FD9B800A12BCF /* NEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F71390531A6FD9B800A12BCF /* NEDataManager.m */; };
-		F75628921A73547F0022339D /* NEShowsDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F75628911A73547F0022339D /* NEShowsDataManager.m */; };
+		F75628921A73547F0022339D /* NEListDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F75628911A73547F0022339D /* NEListDataManager.m */; };
+		F7DB05C01A73616500CE9353 /* NEListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DB05BF1A73616500CE9353 /* NEListModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +69,10 @@
 		F713904D1A6FCC4F00A12BCF /* NEApiEndpoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEApiEndpoints.m; sourceTree = "<group>"; };
 		F71390521A6FD9B800A12BCF /* NEDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEDataManager.h; sourceTree = "<group>"; };
 		F71390531A6FD9B800A12BCF /* NEDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEDataManager.m; sourceTree = "<group>"; };
-		F75628901A73547F0022339D /* NEShowsDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEShowsDataManager.h; sourceTree = "<group>"; };
-		F75628911A73547F0022339D /* NEShowsDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEShowsDataManager.m; sourceTree = "<group>"; };
+		F75628901A73547F0022339D /* NEListDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEListDataManager.h; sourceTree = "<group>"; };
+		F75628911A73547F0022339D /* NEListDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEListDataManager.m; sourceTree = "<group>"; };
+		F7DB05BE1A73616500CE9353 /* NEListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEListModel.h; sourceTree = "<group>"; };
+		F7DB05BF1A73616500CE9353 /* NEListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEListModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,12 +197,14 @@
 		F74EF81F1A6D18AB006EC29E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F7DB05BE1A73616500CE9353 /* NEListModel.h */,
+				F7DB05BF1A73616500CE9353 /* NEListModel.m */,
 				F71390461A6F91FD00A12BCF /* NEShowModel.h */,
 				F71390471A6F91FD00A12BCF /* NEShowModel.m */,
 				F70219C71A7338AB00AC26F1 /* NEEpisodeModel.h */,
 				F70219C81A7338AB00AC26F1 /* NEEpisodeModel.m */,
-				F75628901A73547F0022339D /* NEShowsDataManager.h */,
-				F75628911A73547F0022339D /* NEShowsDataManager.m */,
+				F75628901A73547F0022339D /* NEListDataManager.h */,
+				F75628911A73547F0022339D /* NEListDataManager.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -381,8 +386,9 @@
 			files = (
 				F70219C31A71054000AC26F1 /* NDataModelTypes.m in Sources */,
 				F70AD4191A6D05BA00F5BA40 /* ViewController.m in Sources */,
-				F75628921A73547F0022339D /* NEShowsDataManager.m in Sources */,
+				F75628921A73547F0022339D /* NEListDataManager.m in Sources */,
 				F70AD4161A6D05BA00F5BA40 /* AppDelegate.m in Sources */,
+				F7DB05C01A73616500CE9353 /* NEListModel.m in Sources */,
 				F70219C91A7338AB00AC26F1 /* NEEpisodeModel.m in Sources */,
 				F71390541A6FD9B800A12BCF /* NEDataManager.m in Sources */,
 				F70AD4131A6D05BA00F5BA40 /* main.m in Sources */,
