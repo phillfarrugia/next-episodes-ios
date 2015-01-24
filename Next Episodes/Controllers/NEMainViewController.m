@@ -11,6 +11,8 @@
 #import "NEListDataManager.h"
 #import "NEListModel.h"
 #import "NEAddShowViewController.h"
+#import "NEShowTableViewCell.h"
+#import "NEShowCellViewModel.h"
 
 @interface NEMainViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -29,12 +31,26 @@
     
     self.list = [[NEListDataManager defaultManager] list];
     [self prepareViews];
+    [self subscribeToSignals];
+    [self.tableView registerNib:[UINib nibWithNibName:@"NEShowTableViewCell" bundle:nil] forCellReuseIdentifier:@"NEShowCell"];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)subscribeToSignals
+{
+    @weakify(self);
+    [[NEListDataManager defaultManager].listDidChangeSubject subscribeNext:^(NEListChangeTuple *x) {
+        if (x.changeType != NEListChangeTypeReplaced) {
+            @strongify(self);
+            self.list = x.listChanged;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)prepareViews
@@ -89,6 +105,7 @@
 - (void)prepareTableView
 {
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    self.tableView.rowHeight = 100;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
@@ -103,11 +120,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"show.cell"];
+    NEShowTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NEShowCell"];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"show.cell"];
-    }
+    NEShowCellViewModel *viewModel = [[NEShowCellViewModel alloc] initWithShow:self.list.shows[indexPath.row]];
+    [cell setViewModel:viewModel];
     
     return cell;
 }

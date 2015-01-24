@@ -23,12 +23,12 @@
 {
     return @{
              @"traktId": @"ids.trakt",
-             @"airDate": @"first_aired",
+             @"airdate": @"first_aired",
              @"episode": @"number"
              };
 }
 
-+ (NSValueTransformer *)airDateJSONTransformer
++ (NSValueTransformer *)airdateJSONTransformer
 {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^id(NSString *string) {
         if (string) {

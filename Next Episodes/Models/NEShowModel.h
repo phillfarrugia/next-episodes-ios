@@ -26,7 +26,7 @@ typedef enum : NSUInteger {
 
 @property (readonly) NSURL *poster;
 
-@property (readonly) NSDate *airDate;
+@property (readonly) NSDate *airdate;
 @property (readonly) NSNumber *runtime;
 
 @property (readonly) NSString *certification;

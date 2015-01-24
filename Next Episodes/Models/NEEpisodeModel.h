@@ -19,7 +19,7 @@
 @property (readonly) NSNumber *season;
 @property (readonly) NSNumber *episode;
 
-@property (readonly) NSDate *airDate;
+@property (readonly) NSDate *airdate;
 
 @property (readonly, getter=isWatched) BOOL watched;
 

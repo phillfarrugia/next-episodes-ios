@@ -10,6 +10,7 @@
 #import "NEListModel.h"
 #import "NEShowModel.h"
 #import "NEEpisodeModel.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 static NSString * const fullListName = @"ListCollection.json";
 
@@ -18,6 +19,8 @@ static NSString * const fullListName = @"ListCollection.json";
 @property (nonatomic)  NSURL *docPathURL;
 @property NEListModel *list;
 @property (nonatomic, strong) dispatch_queue_t archiveQueue;
+
+@property (nonatomic) RACSubject *listDidChangeSubject;
 
 @end
 
@@ -40,6 +43,7 @@ static NSString * const fullListName = @"ListCollection.json";
 {
     if ((self = [super init])) {
         self.archiveQueue = dispatch_queue_create("com.nextepisodes.archivequeue",  DISPATCH_QUEUE_SERIAL);
+        self.listDidChangeSubject = [RACSubject subject];
     }
     
     return self;
@@ -68,6 +72,8 @@ static NSString * const fullListName = @"ListCollection.json";
 {
     _list = [[NEListModel alloc] initWithStandardValues];
     [self saveList];
+
+    [self.listDidChangeSubject sendNext:@(YES)];
     
     return YES;
 }
@@ -88,6 +94,10 @@ static NSString * const fullListName = @"ListCollection.json";
     _list = [_list addShow:show];
     [self saveList];
     
+    [self.listDidChangeSubject sendNext:[NEListChangeTuple tupleWithItemChanged:show
+                                                                    listChanged:_list
+                                                                     changeType:NEListChangeTypeAdded]];
+    
     return _list;
 }
 
@@ -95,6 +105,10 @@ static NSString * const fullListName = @"ListCollection.json";
 {
     _list = [_list removeShow:show];
     [self saveList];
+    
+    [self.listDidChangeSubject sendNext:[NEListChangeTuple tupleWithItemChanged:show
+                                                                    listChanged:_list
+                                                                     changeType:NEListChangeTypeRemoved]];
     
     return _list;
 }
@@ -104,6 +118,10 @@ static NSString * const fullListName = @"ListCollection.json";
     _list = [_list replaceShow:oldShow withShow:newShow];
     [self saveList];
     
+    [self.listDidChangeSubject sendNext:[NEListChangeTuple tupleWithItemChanged:oldShow
+                                                                    listChanged:_list
+                                                                     changeType:NEListChangeTypeReplaced]];
+    
     return _list;
 }
 
@@ -111,6 +129,10 @@ static NSString * const fullListName = @"ListCollection.json";
 {
     _list = [_list addEpisode:episode];
     [self saveList];
+    
+    [self.listDidChangeSubject sendNext:[NEListChangeTuple tupleWithItemChanged:episode
+                                                                    listChanged:_list
+                                                                     changeType:NEListChangeTypeAdded]];
     
     return _list;
 }
@@ -120,6 +142,10 @@ static NSString * const fullListName = @"ListCollection.json";
     _list = [_list removeEpisode:episode];
     [self saveList];
     
+    [self.listDidChangeSubject sendNext:[NEListChangeTuple tupleWithItemChanged:episode
+                                                                    listChanged:_list
+                                                                     changeType:NEListChangeTypeRemoved]];
+    
     return _list;
 }
 
@@ -128,6 +154,10 @@ static NSString * const fullListName = @"ListCollection.json";
     NEEpisodeModel *newEpisode = [episode copyWithWatched:YES];
     _list = [_list replaceEpisode:episode withEpisode:newEpisode];
     [self saveList];
+    
+    [self.listDidChangeSubject sendNext:[NEListChangeTuple tupleWithItemChanged:episode
+                                                                    listChanged:_list
+                                                                     changeType:NEListChangeTypeReplaced]];
     
     return _list;
 }
@@ -158,6 +188,33 @@ static NSString * const fullListName = @"ListCollection.json";
     }
     
     return _docPathURL;
+}
+
+@end
+
+#pragma mark - Tuple
+
+@interface NEListChangeTuple ()
+
+@property (readwrite) id itemChanged;
+@property (readwrite) NEListModel *listChanged;
+@property (readwrite) NEListChangeType changeType;
+
+@end
+
+@implementation NEListChangeTuple
+
++ (NEListChangeTuple *)tupleWithItemChanged:(id)itemChanged
+                                 listChanged:(NEListModel *)listModel
+                                 changeType:(NEListChangeType)changeType;
+{
+    NEListChangeTuple *tuple = [[NEListChangeTuple alloc] init];
+    
+    tuple.itemChanged = itemChanged;
+    tuple.listChanged = listModel;
+    tuple.changeType  = changeType;
+    
+    return tuple;
 }
 
 @end

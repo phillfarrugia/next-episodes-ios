@@ -17,7 +17,7 @@
 {
     return @{
              @"traktId": @"ids.trakt",
-             @"airDate": @"airs",
+             @"airdate": @"airs",
              @"poster": @"images.poster.medium"
              };
 }
@@ -37,7 +37,7 @@
             }];
 }
 
-+ (NSValueTransformer *)airDateJSONTransformer
++ (NSValueTransformer *)airdateJSONTransformer
 {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^id(NSString *string) {
         if (string) {
