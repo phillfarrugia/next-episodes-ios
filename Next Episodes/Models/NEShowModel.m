@@ -18,7 +18,7 @@
     return @{
              @"traktId": @"ids.trakt",
              @"airdate": @"airs",
-             @"poster": @"images.poster.medium"
+             @"poster": @"images.poster.thumb"
              };
 }
 

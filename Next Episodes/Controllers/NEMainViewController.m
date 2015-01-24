@@ -135,6 +135,21 @@
     
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NEShowModel *show = [self.list.shows objectAtIndex:indexPath.row];
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[NEListDataManager defaultManager] removeShow:show];
+    }
+}
+
 - (void)didSelectAddShow
 {
     NEAddShowViewController *addShowViewController = [[NEAddShowViewController alloc] init];
