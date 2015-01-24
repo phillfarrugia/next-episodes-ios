@@ -16,9 +16,6 @@
 
 @property (readonly, nonatomic) NEListModel *list;
 
-#pragma mark - Signals For State Change
-@property (readonly, nonatomic) RACSubject *listItemDidChangeSubject;
-
 #pragma mark - Methods
 + (instancetype)defaultManager;
 
