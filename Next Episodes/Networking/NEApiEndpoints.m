@@ -11,7 +11,7 @@
 
 static NSString * const NEApiTrendingShowsEndpoint = @"https://next-episodes-api.herokuapp.com/api/v1/trending";
 static NSString * const NEApiLatestEpisodeEndpoint = @"https://next-episodes-api.herokuapp.com/api/v1/latest/";
-static NSString * const NEApiShowSearchEndpoint = @"https://next-episodes-api.herokuapp.com/api/v1/shows/";
+static NSString * const NEApiShowSearchEndpoint = @"https://next-episodes-api.herokuapp.com/api/v1/search/";
 
 @interface NEApiEndpoints ()
 
