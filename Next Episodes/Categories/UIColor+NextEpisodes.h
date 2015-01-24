@@ -12,4 +12,13 @@
 
 + (UIColor *)navigationColor;
 
+/*
+ Segmented Control
+ */
++ (UIColor *)segmentBackgroundColor;
++ (UIColor *)selectedSegmentBackgroundColor;
++ (UIColor *)segmentBorderColor;
++ (UIColor *)segmentTitleColor;
++ (UIColor *)selectedSegmentTitleColor;
+
 @end

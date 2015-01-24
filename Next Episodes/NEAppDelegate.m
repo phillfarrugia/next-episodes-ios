@@ -7,6 +7,7 @@
 //
 
 #import "NEAppDelegate.h"
+#import "NEMainViewController.h"
 
 @interface NEAppDelegate ()
 
@@ -16,7 +17,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    NEMainViewController *mainViewController = [[NEMainViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    window.backgroundColor = [UIColor whiteColor];
+    window.rootViewController = navigationController;
+    
+    self.window = window;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
