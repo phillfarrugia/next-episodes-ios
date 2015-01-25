@@ -54,6 +54,15 @@
     }];
 }
 
+- (BOOL)isEqual:(id)object
+{
+    if ([object isKindOfClass:[NEShowModel	class]]) {
+        return [self.traktId isEqualToNumber:[(NEShowModel *)object traktId]];
+    }
+    
+    return NO;
+}
+
 @end
 
 @implementation NEShowModelDecoder

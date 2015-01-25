@@ -8,7 +8,6 @@
 
 #import "NEShowDetailViewController.h"
 #import "NEShowModel.h"
-#import "MDCParallaxView.h"
 
 @interface NEShowDetailViewController ()
 
@@ -45,7 +44,6 @@
 
 - (void)prepareViews
 {
-    
 }
 
 @end

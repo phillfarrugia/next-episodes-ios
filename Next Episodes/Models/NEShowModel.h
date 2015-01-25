@@ -35,6 +35,8 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, assign, readonly) NEShowStatus status;
 
+- (BOOL)isEqual:(id)object;
+
 @end
 
 @interface NEShowModelDecoder : NSObject <NEJsonDataModelDecoder>
