@@ -62,6 +62,8 @@ static const CGFloat NEShowCellViewModelHeight = 85;
             return @"Ended";
         case NEShowStatusCanceled:
             return @"Cancelled";
+        case NEShowStatusUnknown:
+            return nil;
     }
 }
 

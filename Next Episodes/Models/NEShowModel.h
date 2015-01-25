@@ -13,7 +13,8 @@ typedef enum : NSUInteger {
     NEShowStatusReturning,
     NEShowStatusInProduction,
     NEShowStatusEnded,
-    NEShowStatusCanceled
+    NEShowStatusCanceled,
+    NEShowStatusUnknown
 } NEShowStatus;
 
 @interface NEShowModel : MTLModel <MTLJSONSerializing>

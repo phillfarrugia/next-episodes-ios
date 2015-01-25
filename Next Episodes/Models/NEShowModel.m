@@ -34,7 +34,7 @@
             @"in production": @(NEShowStatusInProduction),
             @"ended": @(NEShowStatusEnded),
             @"canceled": @(NEShowStatusCanceled)
-            }];
+            } defaultValue:@(NEShowStatusUnknown) reverseDefaultValue:@(NEShowStatusUnknown)];
 }
 
 + (NSValueTransformer *)airdateJSONTransformer

@@ -157,7 +157,7 @@
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
-    self.searchResults = nil;
+    self.searchResults = @[];
     [self.tableView reloadData];
     searchBar.showsCancelButton = NO;
     searchBar.text = nil;
@@ -169,8 +169,10 @@
     NSURLRequest *showQueryRequest = [[NEApiEndpoints endpoints] searchShowsByQueryString:queryString];
     
     [[NEDataManager dataManagerWithDataSource:[NEApiCommunicator apiCommunicator]] collectionOfType:NEDataModelTypeShow fromURLRequest:showQueryRequest success:^(NEDataManager *dataManager, NEDataModelType dataModelType, NSURLRequest *urlRequest, NSArray *collection) {
-        self.searchResults = collection;
-        [self.tableView reloadData];
+        if (collection != nil) {
+            self.searchResults = collection;
+            [self.tableView reloadData];
+        }
     } failure:^(NEDataManager *dataManager, NEDataModelType dataModelType, NSURLRequest *urlRequest, NSError *error) {
         NSLog(@"%@", error);
     }];
