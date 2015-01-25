@@ -8,6 +8,7 @@
 
 #import "NEShowDetailViewController.h"
 #import "NEShowModel.h"
+#import "MDCParallaxView.h"
 
 @interface NEShowDetailViewController ()
 
@@ -33,12 +34,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = [self.show title];
+    [self prepareViews];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareViews
+{
+    
 }
 
 @end

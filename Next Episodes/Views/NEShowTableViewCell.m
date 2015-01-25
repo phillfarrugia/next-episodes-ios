@@ -7,6 +7,7 @@
 //
 
 #import <Masonry/Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "NEShowTableViewCell.h"
 #import "NEShowCellViewModel.h"
 #import "UIImageView+AFNetworking.h"
@@ -60,7 +61,7 @@
     self.overview.text = self.viewModel.overview;
     [self.overview setNumberOfLines:2];
     
-    [self.poster setImageWithURL:self.viewModel.poster placeholderImage:[UIImage imageNamed:@"Poster Placeholder"]];
+    [self.poster sd_setImageWithURL:self.viewModel.poster placeholderImage:[UIImage imageNamed:@"Poster Placeholder"]];
     
     [self setupConstraints];
 }
