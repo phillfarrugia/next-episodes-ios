@@ -87,8 +87,9 @@
     }];
 
     [self.runtime mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.status.mas_trailing).with.offset(10.0f);
-        make.centerY.equalTo(self.status.mas_centerY).with.offset(0.0f);
+        make.top.equalTo(self.title.mas_bottom).with.offset(3.0f);
+        make.leading.equalTo(self.status.mas_trailing).with.offset(5.0f);
+        make.baseline.equalTo(self.status.mas_baseline).with.offset(0.0f);
         make.width.greaterThanOrEqualTo(@50);
     }];
 
