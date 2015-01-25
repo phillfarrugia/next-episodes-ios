@@ -13,6 +13,7 @@
 #import "NEAddShowViewController.h"
 #import "NEShowTableViewCell.h"
 #import "NEShowCellViewModel.h"
+#import "NEShowDetailViewController.h"
 
 @interface NEMainViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -133,7 +134,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NEShowModel *show = [self.list.shows objectAtIndex:indexPath.row];
     
+    NEShowDetailViewController *showDetail = [[NEShowDetailViewController alloc] initWithShow:show];
+    [self.navigationController pushViewController:showDetail animated:YES];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
