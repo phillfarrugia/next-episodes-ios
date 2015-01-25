@@ -152,6 +152,7 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    self.searchResults = @[];
     [self fetchQueryShows:searchBar.text];
 }
 
