@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_DateTools 4
 #define COCOAPODS_VERSION_PATCH_DateTools 3
 
+// MDCParallaxView
+#define COCOAPODS_POD_AVAILABLE_MDCParallaxView
+#define COCOAPODS_VERSION_MAJOR_MDCParallaxView 0
+#define COCOAPODS_VERSION_MINOR_MDCParallaxView 1
+#define COCOAPODS_VERSION_PATCH_MDCParallaxView 5
+
 // Mantle
 #define COCOAPODS_POD_AVAILABLE_Mantle
 #define COCOAPODS_VERSION_MAJOR_Mantle 1
