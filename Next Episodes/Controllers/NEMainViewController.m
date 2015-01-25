@@ -108,6 +108,7 @@
     self.tableView.rowHeight = 100;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
     [self.view addSubview:self.tableView];
 }
 

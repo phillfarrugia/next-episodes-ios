@@ -56,7 +56,8 @@ static NSString * const NEApiShowSearchEndpoint = @"https://next-episodes-api.he
 
 - (NSURLRequest *)searchShowsByQueryString:(NSString *)queryString
 {
-    NSDictionary *params = @{ @"query": queryString };
+    NSString *urlEncoded = [queryString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSDictionary *params = @{ @"query": urlEncoded };
     return [self urlRequestWithHTTPVerb:@"GET" url:NEApiShowSearchEndpoint params:params];
 }
 

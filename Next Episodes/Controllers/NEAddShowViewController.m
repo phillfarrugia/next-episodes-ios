@@ -15,10 +15,13 @@
 #import "NEShowTableViewCell.h"
 #import "NEShowCellViewModel.h"
 
-@interface NEAddShowViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface NEAddShowViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchControllerDelegate>
 
 @property (nonatomic) UITableView *tableView;
 @property (nonatomic) NSArray *shows;
+
+@property (nonatomic) UISearchController *searchController;
+@property (nonatomic) NSArray *searchResults;
 
 @end
 
@@ -27,6 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Add Show";
+    
     [self prepareTableView];
     [self prepareViews];
     
@@ -41,8 +46,15 @@
 
 - (void)fetchTrendingShows
 {
+    
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [activityIndicator setCenter:self.view.center];
+    [activityIndicator startAnimating];
+    [self.view addSubview:activityIndicator];
+    
     NSURLRequest *trendingShowsRequest = [[NEApiEndpoints endpoints] trendingShowsRequest];
     [[NEDataManager dataManagerWithDataSource:[NEApiCommunicator apiCommunicator]] collectionOfType:NEDataModelTypeShow fromURLRequest:trendingShowsRequest success:^(NEDataManager *dataManager, NEDataModelType dataModelType, NSURLRequest *urlRequest, NSArray *collection) {
+        [activityIndicator stopAnimating];
         self.shows = collection;
         [self.tableView reloadData];
     } failure:^(NEDataManager *dataManager, NEDataModelType dataModelType, NSURLRequest *urlRequest, NSError *error) {
@@ -69,6 +81,10 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    UISearchBar *searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
+    self.tableView.tableHeaderView = searchBar;
+    searchBar.delegate = self;
+    
     [self.view addSubview:self.tableView];
     [self fetchTrendingShows];
 }
@@ -77,14 +93,25 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if ([self.searchResults count] > 0) {
+        return [self.searchResults count];
+    }
+    
     return [self.shows count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NEShowTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NEShowCell"];
+    NEShowModel *show;
     
-    NEShowCellViewModel *viewModel = [[NEShowCellViewModel alloc] initWithShow:self.shows[indexPath.row]];
+    if ([self.searchResults count] > 0) {
+        show = self.searchResults[indexPath.row];
+    } else {
+        show = self.shows[indexPath.row];
+    }
+    
+    NEShowTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NEShowCell"];
+    NEShowCellViewModel *viewModel = [[NEShowCellViewModel alloc] initWithShow:show];
     [cell setViewModel:viewModel];
     
     return cell;
@@ -94,7 +121,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NEShowModel *show = [self.shows objectAtIndex:indexPath.row];
+    NEShowModel *show;
+    
+    if ([self.searchResults count] > 0) {
+        show = self.searchResults[indexPath.row];
+    } else {
+        show = self.shows[indexPath.row];
+    }
+    
     [[NEListDataManager defaultManager] addShow:show];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -107,6 +141,39 @@
 - (void)didSelectDismiss
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark Search Bar Delegate
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    searchBar.showsCancelButton = YES;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self fetchQueryShows:searchBar.text];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    self.searchResults = nil;
+    [self.tableView reloadData];
+    searchBar.showsCancelButton = NO;
+    searchBar.text = nil;
+    [searchBar resignFirstResponder];
+}
+
+- (void)fetchQueryShows:(NSString *)queryString
+{
+    NSURLRequest *showQueryRequest = [[NEApiEndpoints endpoints] searchShowsByQueryString:queryString];
+    
+    [[NEDataManager dataManagerWithDataSource:[NEApiCommunicator apiCommunicator]] collectionOfType:NEDataModelTypeShow fromURLRequest:showQueryRequest success:^(NEDataManager *dataManager, NEDataModelType dataModelType, NSURLRequest *urlRequest, NSArray *collection) {
+        self.searchResults = collection;
+        [self.tableView reloadData];
+    } failure:^(NEDataManager *dataManager, NEDataModelType dataModelType, NSURLRequest *urlRequest, NSError *error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 @end
